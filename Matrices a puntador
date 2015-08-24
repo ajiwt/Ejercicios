@@ -1,0 +1,46 @@
+#include <stdio.h>
+
+int main()
+{
+	int i, j, a, counter=0,m,n;
+	int matriz[10][10];
+	
+	
+	puts("Bienvenido");
+	puts("Programa que pide el tamaño de la matriz y sus valores correspondientes\n y indica el numero de ceros ingresados");
+	puts("Ingrese el tamaño de la matriz");
+	puts("Ingresa el numero de renglones: [1-10]");
+	scanf("%d", &m);
+	puts("Ingrese el numero de columnas: [1-10]");
+	scanf("%d", &n);
+
+
+	for(i=0;i<m;i++)
+	{
+ 		for(j=0;j<n;j++)
+		{
+			printf("Ingrese el valor para [%d][%d]: ", i+1,j+1);
+			scanf("%d", &a);
+			matriz[i][j]= a;
+			if(a==0)
+			{
+				counter++;
+			}
+			
+			
+		}
+	}
+
+	puts("");
+	printf("Los valores asignados a la matriz son: \n");
+
+	for(i=0;i<m;i++)
+	{
+		for(j=0;j<n;j++)
+		{
+			printf("[%d][%d]: %d\n", i+1,j+1, matriz[i][j]);
+		}
+	}	
+
+	printf("EL numero de ceros en la matriz es de: %d\n", counter);
+}
