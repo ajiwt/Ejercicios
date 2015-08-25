@@ -2,45 +2,55 @@
 
 int main()
 {
-	int i, j, a, counter=0,m,n;
-	int matriz[10][10];
-	
-	
-	puts("Bienvenido");
-	puts("Programa que pide el tamaño de la matriz y sus valores correspondientes\n y indica el numero de ceros ingresados");
-	puts("Ingrese el tamaño de la matriz");
-	puts("Ingresa el numero de renglones: [1-10]");
-	scanf("%d", &m);
-	puts("Ingrese el numero de columnas: [1-10]");
-	scanf("%d", &n);
-
-
-	for(i=0;i<m;i++)
-	{
- 		for(j=0;j<n;j++)
-		{
-			printf("Ingrese el valor para [%d][%d]: ", i+1,j+1);
-			scanf("%d", &a);
-			matriz[i][j]= a;
-			if(a==0)
-			{
-				counter++;
-			}
-			
-			
-		}
-	}
-
-	puts("");
-	printf("Los valores asignados a la matriz son: \n");
-
-	for(i=0;i<m;i++)
-	{
-		for(j=0;j<n;j++)
-		{
-			printf("[%d][%d]: %d\n", i+1,j+1, matriz[i][j]);
-		}
-	}	
-
-	printf("EL numero de ceros en la matriz es de: %d\n", counter);
+    int **ap= NULL;
+    int numRen =0;
+    int numCol = 0;
+    int i, j, a;
+    int counter = 0;
+    puts("Ingrese el numero de renglones");
+    scanf("%d", &numRen);
+    puts("Ingrese el numero de columnas");
+    scanf("%d", &numCol);
+    
+    
+    ap = (int*)malloc(numRen*sizeof(int));
+    ap = (int*)malloc(numCol*sizeof(int));
+    if(ap == NULL)
+    {
+         puts("Memoria insuficiente");
+         exit(0);      
+    }
+    
+    for(i=0;i<numRen;i++)
+    {
+         for(j=0;j<numCol;j++)
+         {
+          printf("Ingrese el valor para [%d][%d]: ", i +1, j+1);
+          //scanf("%d", &a);
+          scanf("%d", (ap + i + j));
+          if((ap+     i + j) == 0)
+                    counter++;
+                    
+                                
+         }                      
+    }
+    puts("");
+    puts("Los valores asignados a la matriz son \n");   
+    
+    
+    for(i=0;i<numRen;i++)
+    {
+        for(j=0;j<numCol;j++)
+        {
+         printf("[%d][%d]: %d %d\n", i+1, j+1, (ap+i), (ap +j) );                     
+        }                     
+    }
+    
+    printf("El numero de ceros en la matriz es de: %d", counter);
+    
+    free(ap);
+    fflush(stdin);
+    getchar();
+    system("pause");
+     
 }
