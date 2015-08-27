@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+	int *ap=NULL; //apuntador inicializado en NULL
+	int i, j; //contadores para ciclos for
+	int renglon, columna; //variables para almacenar el tamaño de la matriz
+	int contador =0; //cuenta el numero de ceros
+	
+	
+	printf("Ingrese los renglones: ");
+	scanf("%d", &renglon);
+	
+	printf("Ingrese las columna: ");
+	scanf("%d", &columna);
+	
+	ap = (int*)malloc(renglon*columna*sizeof(int)); //Reserva memoria conforme a los renglones
+																	//y columnas ingresados por el usuario
+	for(i=0;i<renglon;i++)
+	{
+		for(j=0;j<columna;j++)
+		{
+			printf("Ingrese el elemento [%d][%d]: ", i+1,j+1);
+			scanf("%d", ap+i+j); //lee elementos aumentando la posicion del apuntador
+			if(*(ap+i+j) == 0) //Hace comparacion para contar numero de ceros
+				contador++; //contador se incrementa si encuentra un cero
+		}
+	}
+	
+	puts("");
+	puts("Los elemntos de la matriz son:");
+	for(i=0;i<renglon;i++)
+	{
+		for(j=0;j<columna;j++)
+		{
+			printf("Elemento [%d][%d]: %d\n", i+1, j+1, *(ap+i+j)); //muestra los elementos de la matriz
+		}
+	}
+	
+	puts("");
+	printf("El numero total de ceros es: %d", contador); //imprime el numero de ceros
+	
+	
+	   
+    free(ap); //libera memoria
+	
+}
