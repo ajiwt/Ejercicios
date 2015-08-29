@@ -1,0 +1,5 @@
+Commands for github
+
+git clone "clipboard"  -> Add repositories 
+git status   -> shows us whats different between us and github
+git add index.html -> add changes by name
