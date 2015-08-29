@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main(int argc, char *argv[])
+{
+	
+	int x;
+
+	printf("Ingrese un numero entero: ");
+	scanf("%d", &x);
+
+	switch(x)
+	{
+		case 0 ... 2: 
+		printf("Seleccionaste un numero entre 0-2");
+		break;
+		case 3 ... 5:
+		printf("Seleccionaste un numero entre 3-5");
+		break;
+		case 6 ... 15:
+		printf("Seleccionaste un numero entre 6-15");
+		break;
+		default:
+		printf("Seleccionaste un numero mayor a 15 :(");
+		break;
+	}
+
+	puts("");
+}
