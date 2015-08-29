@@ -3,3 +3,6 @@ Commands for github
 git clone "clipboard"  -> Add repositories 
 git status   -> shows us whats different between us and github
 git add index.html -> add changes by name
+git commit -m "Adder index.htm"  --> Means you lock in it to the repository -m means message in quotes
+git push ---> Push it up to github.com
+git pull --> pull the info from github
