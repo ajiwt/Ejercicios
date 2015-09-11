@@ -1,0 +1,50 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <locale.h>
+
+int main()
+{
+	setlocale(LC_CTYPE, "Spanish");
+
+	FILE *ap;
+	char *guarda;
+	char *numero;
+	char elemento[1000];
+	char n[5];
+	
+	ap = fopen("df.txt", "r");
+	if(ap == NULL)
+	{
+		printf("No se pudo abrir el archivo");
+	}
+	else{
+	
+	puts("Ingrese num ");
+	scanf("%s", n);
+	fscanf(ap, "%s", &elemento);
+	guarda = strtok((char*)ap, "|" );
+	printf("%s ", elemento);	
+	
+	do{
+			
+			fscanf(ap, "%s", &elemento);
+			guarda = strtok(NULL, "|");
+			//printf("%s", elemento);
+			if(strcpy(n, elemento)==0);
+			{
+				
+				
+		
+		
+		}while(!feof(ap));
+	while(elemento != NULL)
+		{
+			fscanf(ap, "%s", &elemento);
+			guarda = strtok(NULL, "|");
+			printf("%s\n", elemento);
+			break;
+		}
+}
+fclose(ap);
+}
