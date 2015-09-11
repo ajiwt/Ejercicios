@@ -8,7 +8,7 @@ int main()
    FILE *ap;
    char *save;
    char *elemento;
-   int cp;
+   char cp[10];
    
 
    ap = fopen("df.txt", "rb");
@@ -19,13 +19,15 @@ int main()
    else
    {
       puts("Ingrese el cp buscado");
-      scanf("%d", &cp);
+      scanf("%s", cp);
       do{
+	puts("nO");
          elemento = strtok_r((char*)ap, "|", &save);
          
-      }while(strcmp(elemento, cp) == 0);
+      }while(strcmp(elemento, cp) == 1);
    while(elemento != NULL)
    { 
+    printf("si");
       elemento = strtok_r(NULL, "|", &save);
       printf("%s", elemento);
    }
